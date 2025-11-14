@@ -68,6 +68,11 @@
     gap: 3rem;
     padding: 0.1rem 3rem;
 }
+.b-task-item__title {
+    flex-grow: 1;
+    text-align: center;
+    resize: none;
+}
 .b-task-list__item--checked {
     background:
             linear-gradient(to right, black, black)
@@ -76,8 +81,4 @@
 }
 .b-task-item__checkbox {
     scale: 2;
-}
-.b-task-item__label {
-    flex-grow: 1;
-    text-align: center;
 }

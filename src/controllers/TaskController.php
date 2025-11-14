@@ -45,11 +45,15 @@ class TaskController
                 echo "<input type=\"checkbox\" id=\"task{$task["id"]}\" name=\"task{$task["id"]}\" class=\"b-task-item__checkbox\" checked>";
             } else {
                 echo '<div class="b-task-list__item">';
+                echo '<div>';
                 echo "<input type=\"checkbox\" id=\"task{$task["id"]}\" name=\"task{$task["id"]}\" class=\"b-task-item__checkbox\">";
+                echo '</div>';
             }
-            echo "<label for=\"task{$task["id"]}\" class=\"b-task-item__label\">$task[title]</label>";
+            echo "<textarea readonly class=\"b-task-item__title\">$task[title]</textarea>";
+            echo "<div class=\"b-task-item__toolbox\">";
             echo '<button><i class="fa-solid fa-ellipsis-vertical"></i></button>';
             echo '<button><i class="fa-solid fa-trash"></i></button>';
+            echo "</div>";
             echo '</div>';
         }
     }
