@@ -3,8 +3,6 @@ namespace App\Controllers;
 use App\Models\Task;
 use PDO;
 
-//require_once "config/Database.php";
-
 class Database {
     private $pdo = null;
 
@@ -51,6 +49,7 @@ class TaskController
             }
             echo "<label for=\"task{$task["id"]}\" class=\"b-task-item__label\">$task[title]</label>";
             echo '<button><i class="fa-solid fa-ellipsis-vertical"></i></button>';
+            echo '<button><i class="fa-solid fa-trash"></i></button>';
             echo '</div>';
         }
     }
