@@ -25,7 +25,7 @@ $taskController = new TaskController("tasks.sqlite");
     <header class="b-header">
         <h1 class="b-header__title">Мои задачи</h1>
         <div class="b-header__add-task">
-            <form action="index.php" method="post" class="b-add-task">
+            <form action="taskAddHandler.php" method="post" class="b-add-task">
                 <input type="text"
                        id="taskTitle"
                        name="taskTitle"
@@ -34,24 +34,12 @@ $taskController = new TaskController("tasks.sqlite");
                 <button type="submit"
                         class="b-add-task__button">Добавить задачу
                 </button>
-                <?php
-                    $title="";
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $title = $_POST["taskTitle"];
-                    }
-                    if ($title != "") {
-                        $task = new Task($title, 0);
-                        $taskController->addTaskToDB($task);
-                    }
-
-                ?>
             </form>
         </div>
     </header>
     <main class="b-main">
         <div class="b-main__task-list">
             <?php
-
             $taskController->renderAllTasks();
             ?>
         </div>
